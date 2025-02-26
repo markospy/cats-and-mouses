@@ -20,7 +20,7 @@
 4. **Recursos Limitados**:
    - **Comida**: La comida es limitada y se consume al alimentarse. Si no hay comida, no se puede realizar esta acción.
    - **Refugio**: El refugio tiene una calidad limitada que disminuye con cada uso. Si la calidad llega a 0, no se puede usar más.
-   - La cantida de comida y la calidad del refugio de cada animal es un valor aleatorio de 1 a 10 que se genera al iniciar el juego.
+   - La cantida de comida de cada animal y la calidad del refugio es un valor aleatorio de 1 a 10 que se genera al iniciar el juego. La calidad del refugio no es independiente en cada animal. Así que es lo primero que se debería usar antes de que el adversario lo gaste.
 5. **Estadísticas**:
    - **Vida**: Si la vida llega a 0, el animal muere.
    - **Fuerza**: Afecta el daño causado al atacar.
@@ -61,6 +61,7 @@
 ### **Cómo Contribuir**
 ¡Invitamos a todos los desarrolladores interesados a contribuir al proyecto! Si tienes ideas para mejorar el juego, agregar nuevas características o corregir errores, ¡haz un **Pull Request**! Aquí hay algunas áreas en las que podrías contribuir:
 - **Nuevas Acciones**: Agrega nuevas acciones para los animales, como "defender" o "explorar".
+- **Nuevas Restricciones**: Dado que el refugio es compartido por ambos animales, se podría impedir que ambos animales lo usaran en el mismo turno. Para ellos había que definir una regla para establecer el orden en que los jugadores puedan definir sus acciones, ya que como esta actualemente implementado el juego el gato es siempre el primero en escojer su acción.
 - **Nuevos Animales**: Implementa nuevos animales con habilidades únicas.
 - **Mejoras en la Interfaz**: Mejora la interfaz de usuario para hacerla más amigable.
 - **Optimización**: Optimiza el código para mejorar el rendimiento.
