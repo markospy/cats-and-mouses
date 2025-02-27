@@ -59,7 +59,8 @@ class Gato(Animal):
             if self.fuerza < 100:
                 self.fuerza += 5 * factor
             print(f"🩸 {self.nombre} ataca a {raton.nombre} causando {danio} puntos de daño.")
-            raton.defender(danio)
+            if raton.vida > 0:
+                raton.defender(danio)
         else:
             print(f"⚔️ {self.nombre} intenta atacar a {raton.nombre}, pero no hace daño.")
             self.agilidad -= 1
@@ -100,7 +101,8 @@ class Raton(Animal):
             if self.fuerza < 100:
                 self.fuerza += 5 * factor
             print(f"🩸 {self.nombre} (Raton) ataca a {gato.nombre} causando {danio} puntos de daño.")
-            gato.defender(danio)
+            if gato.vida > 0:
+                gato.defender(danio)
         else:
             print(f"⚔️ {self.nombre} (Raton) intenta atacar a {gato.nombre}, pero no hace daño.")
 

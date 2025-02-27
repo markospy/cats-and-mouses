@@ -76,7 +76,7 @@ class Turno:
                 self.comida_gato.consumir(self.gato)
 
             if self.raton.vida <= 0:
-                print(f"🪦 ¡El raton {self.raton.nombre} ha muerto! ¡El gato {self.pila_ratongato.nombre} gana!")
+                print(f"🪦 ¡El raton {self.raton.nombre} ha muerto! ¡El gato {self.gato.nombre} gana!")
                 break
 
             if self.gato.vida <= 0:
