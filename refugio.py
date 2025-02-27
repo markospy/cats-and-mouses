@@ -10,7 +10,7 @@ class Refugio:
 
     def proporcionar_refugio(self, animal: Gato | Raton):
         """El animal se recupera en el refugio."""
-        self.calidad -= 1
+        self.calidad = 1
         animal.refugiarse = 1
         print(f"{animal.nombre} se refugia en un {self.tipo}.")
         animal.recuperarse(self.calidad)
