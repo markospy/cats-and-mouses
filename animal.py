@@ -2,11 +2,12 @@ from random import random
 
 
 class Animal:
-    def __init__(self, nombre, vida, fuerza, defensa):
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad):
         self.nombre = nombre
         self.vida = vida
         self.fuerza = fuerza
         self.defensa = defensa
+        self.vitalidad = vitalidad
 
     def atacar(self, otro_animal):
         """Realiza un ataque a otro animal."""
@@ -31,14 +32,13 @@ class Animal:
 
 
 class Gato(Animal):
-    def __init__(self, nombre, vida, fuerza, defensa, agilidad):
-        super().__init__(nombre, vida, fuerza, defensa)
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, agilidad):
+        super().__init__(nombre, vida, fuerza, defensa, vitalidad)
         self.agilidad = agilidad
 
     def atacar(self, raton: "Raton", factor: float):
         """Realiza un ataque a otro animal."""
-        if self.muerto():
-            return
+        self.vitalidad -= 5
         danio = (self.fuerza + self.agilidad - raton.defensa) * factor
         if danio > 0:
             raton.vida -= danio
@@ -72,19 +72,20 @@ class Gato(Animal):
             self.fuerza += factor * 5
         if self.defensa < 100:
             self.defensa += factor * 3
+        if self.vitalidad < 100:
+            self.vitalidad += factor * 2
         if self.agilidad > 10:
             self.agilidad -= factor * 1
 
 
 class Raton(Animal):
-    def __init__(self, nombre, vida, fuerza, defensa, inteligencia):
-        super().__init__(nombre, vida, fuerza, defensa)
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, inteligencia):
+        super().__init__(nombre, vida, fuerza, defensa, vitalidad)
         self.inteligencia = inteligencia
 
     def atacar(self, gato: Gato, factor: float):
-        if self.muerto():
-            return
         """Ataque evasivo para el ratón."""
+        self.vitalidad -= 5
         danio = (self.fuerza + self.inteligencia - gato.defensa) * factor
         if danio > 0:
             gato.vida -= danio
@@ -124,5 +125,7 @@ class Raton(Animal):
             self.fuerza += factor * 5
         if self.defensa < 100:
             self.defensa += factor * 3
+        if self.vitalidad < 100:
+            self.vitalidad += factor * 2
         if self.inteligencia > 10:
             self.inteligencia -= factor * 3

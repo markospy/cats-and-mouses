@@ -29,8 +29,8 @@ def main():
     print("Hello from Cats and Mouses!")
 
     # Crear instancias de Gato y Raton
-    gato = Gato(nombre="Tom", vida=100, fuerza=20, defensa=20, agilidad=50)
-    raton = Raton(nombre="Jerry", vida=100, fuerza=20, defensa=20, inteligencia=50)
+    gato = Gato(nombre="Tom", vida=100, fuerza=20, defensa=20, vitalidad=100, agilidad=50)
+    raton = Raton(nombre="Jerry", vida=100, fuerza=20, defensa=20, vitalidad=100, inteligencia=50)
 
     # Crear instancias de Comida para el gato y el ratón
     comida_gato = Comida(tipo="pescado", cantidad=randint(5, 10))
@@ -49,10 +49,10 @@ def main():
     while gato.vida > 0 and raton.vida > 0:
         print(f"\nTurno {turno._turno + 1}\n")
         print(
-            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🐟Comida: {comida_gato.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
+            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🔋Vitalidad: {gato.vitalidad}\n\t\t🐟Comida: {comida_gato.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
         )
         print(
-            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🧀Comida: {comida_raton.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
+            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
         )
 
         # Solicitar acciones para el gato
