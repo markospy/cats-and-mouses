@@ -2,14 +2,14 @@ from random import random
 
 
 class Animal:
-    def __init__(self, nombre, vida, fuerza, defensa, vitalidad):
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, alimentarse, refugiarse):
         self.nombre = nombre
         self.vida = vida
         self.fuerza = fuerza
         self.defensa = defensa
         self.vitalidad = vitalidad
-        self.alimentarse = 0
-        self.refugiarse = 0
+        self.alimentarse = alimentarse
+        self.refugiarse = refugiarse
 
     def atacar(self, otro_animal):
         """Realiza un ataque a otro animal."""
@@ -34,8 +34,8 @@ class Animal:
 
 
 class Gato(Animal):
-    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, agilidad):
-        super().__init__(nombre, vida, fuerza, defensa, vitalidad)
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, agilidad, alimentarse, refugiarse):
+        super().__init__(nombre, vida, fuerza, defensa, vitalidad, alimentarse, refugiarse)
         self.agilidad = agilidad
 
     def atacar(self, raton: "Raton", factor: float):
@@ -84,8 +84,8 @@ class Gato(Animal):
 
 
 class Raton(Animal):
-    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, inteligencia):
-        super().__init__(nombre, vida, fuerza, defensa, vitalidad)
+    def __init__(self, nombre, vida, fuerza, defensa, vitalidad, inteligencia, alimentarse, refugiarse):
+        super().__init__(nombre, vida, fuerza, defensa, vitalidad, alimentarse, refugiarse)
         self.inteligencia = inteligencia
 
     def atacar(self, gato: Gato, factor: float):

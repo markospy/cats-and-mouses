@@ -29,15 +29,17 @@ def main():
     print("Hello from Cats and Mouses!")
 
     # Crear instancias de Gato y Raton
-    gato = Gato(nombre="Tom", vida=100, fuerza=20, defensa=20, vitalidad=100, agilidad=50)
-    raton = Raton(nombre="Jerry", vida=100, fuerza=20, defensa=20, vitalidad=100, inteligencia=50)
+    gato = Gato(nombre="Tom", vida=100, fuerza=20, defensa=20, vitalidad=100, agilidad=50, alimentarse=0, refugiarse=0)
+    raton = Raton(
+        nombre="Jerry", vida=100, fuerza=20, defensa=20, vitalidad=100, inteligencia=50, alimentarse=0, refugiarse=0
+    )
 
     # Crear instancias de Comida para el gato y el ratón
-    comida_gato = Comida(tipo="pescado", cantidad=randint(5, 10))
-    comida_raton = Comida(tipo="queso", cantidad=randint(5, 10))
+    comida_gato = Comida(tipo="pescado", cantidad=randint(1, 5))
+    comida_raton = Comida(tipo="queso", cantidad=randint(1, 5))
 
     # Crear instancia de Refugio
-    refugio = Refugio(tipo="cueva", calidad=randint(5, 10))
+    refugio = Refugio(tipo="cueva", calidad=randint(3, 5))
 
     # Crear instancia de Turno
     turno = Turno(gato=gato, raton=raton, comida_gato=comida_gato, comida_raton=comida_raton, refugio=refugio)
@@ -49,10 +51,10 @@ def main():
     while gato.vida > 0 and raton.vida > 0:
         print(f"\nTurno {turno._turno + 1}\n")
         print(
-            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🔋Vitalidad: {gato.vitalidad}\n\t\t🐟Comida: {comida_gato.cantidad} - Puede?: {gato.alimentarse!=0}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {gato.refugiarse!=0}"
+            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🔋Vitalidad: {gato.vitalidad}\n\t\t🐟Comida: {comida_gato.cantidad} - Puede?: {gato.alimentarse==0}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {gato.refugiarse==0}"
         )
         print(
-            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad} - Puede?: {raton.alimentarse!=0}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {raton.refugiarse!=0}"
+            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad} - Puede?: {raton.alimentarse==0}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {raton.refugiarse==0}"
         )
 
         animal = choice(["gato", "raton"])
@@ -96,13 +98,13 @@ def main():
             print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
             acciones_raton = []
             acciones_disponibles = acciones.copy()
-            if raton.alimentarse == 1:
+            if raton.alimentarse != 0:
                 acciones_disponibles.remove("alimentarse")
-            if raton.refugiarse == 1:
+            if raton.refugiarse != 0:
                 acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
-                    f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
+                    f"{acciones_disponibles} \nAcción {i + 1}: ",
                     completer=WordCompleter(acciones_disponibles),
                     validator=OptionValidator(),
                     validate_while_typing=False,
@@ -113,13 +115,13 @@ def main():
             print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
             acciones_gato = []
             acciones_disponibles = acciones.copy()
-            if raton.alimentarse == 1:
+            if gato.alimentarse != 0:
                 acciones_disponibles.remove("alimentarse")
-            if raton.refugiarse == 1:
+            if gato.refugiarse != 0:
                 acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
-                    f"'atacar', 'esconderse', 'alimentarse'\nAcción {i + 1}: ",
+                    f"{acciones_disponibles} \nAcción {i + 1}: ",
                     completer=WordCompleter(acciones_disponibles),
                     validator=OptionValidator(),
                     validate_while_typing=False,

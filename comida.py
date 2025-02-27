@@ -4,7 +4,7 @@ from animal import Gato, Raton
 
 
 class Comida:
-    def __init__(self, tipo: Literal["pescado", "queso"], cantidad):
+    def __init__(self, tipo: Literal["pescado", "queso"], cantidad: Literal[1, 2, 3, 4, 5]):
         self.tipo = tipo
         self.cantidad = cantidad
 

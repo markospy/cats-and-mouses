@@ -27,8 +27,8 @@ class Turno:
 
     def compilar_acciones(
         self,
-        acciones_gato: Literal["atacar", "esconderser", "alimentarse"],
-        acciones_raton: Literal["atacar", "esquivar", "esconderser", "alimentarse"],
+        acciones_gato: Literal["atacar", "esconderse", "alimentarse"],
+        acciones_raton: Literal["atacar", "esquivar", "esconderse", "alimentarse"],
     ):
         """
         Compila las acciones de ambos jugadores para el turno.
@@ -62,23 +62,23 @@ class Turno:
                     self.gato.atacar(self.raton, uniform(0.5, 1))
                     self.raton.atacar(self.gato, uniform(0, 0.5))
 
-            elif accion_raton == "esconderser" and accion_gato == "esconderser":
+            if accion_raton == "esconderse" and accion_gato == "esconderse":
                 animal = choice(["gato", "raton"])
                 if animal == "gato":
                     self.refugio.proporcionar_refugio(self.gato)
                 else:
                     self.refugio.proporcionar_refugio(self.raton)
 
-            elif accion_gato == "esconderser" and not accion_raton == "esconderser":
+            if accion_gato == "esconderse" and not accion_raton == "esconderse":
                 self.refugio.proporcionar_refugio(self.gato)
 
-            elif accion_raton == "esconderser" and not accion_gato == "esconderser":
+            if accion_raton == "esconderse" and not accion_gato == "esconderse":
                 self.refugio.proporcionar_refugio(self.raton)
 
-            elif accion_raton == "alimentarse":
+            if accion_raton == "alimentarse":
                 self.comida_raton.consumir(self.raton)
 
-            elif accion_gato == "alimentarse":
+            if accion_gato == "alimentarse":
                 self.comida_gato.consumir(self.gato)
 
             if self.raton.vida <= 0:
