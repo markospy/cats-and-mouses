@@ -69,10 +69,10 @@ class Turno:
                 else:
                     self.refugio.proporcionar_refugio(self.raton)
 
-            elif accion_gato == "esconderser":
+            elif accion_gato == "esconderser" and not accion_raton == "esconderser":
                 self.refugio.proporcionar_refugio(self.gato)
 
-            elif accion_raton == "esconderser":
+            elif accion_raton == "esconderser" and not accion_gato == "esconderser":
                 self.refugio.proporcionar_refugio(self.raton)
 
             elif accion_raton == "alimentarse":

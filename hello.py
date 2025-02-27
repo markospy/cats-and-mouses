@@ -95,6 +95,11 @@ def main():
             # Solicitar acciones para el ratón
             print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
             acciones_raton = []
+            acciones_disponibles = acciones.copy()
+            if raton.alimentarse == 1:
+                acciones_disponibles.remove("alimentarse")
+            if raton.refugiarse == 1:
+                acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
                     f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
@@ -107,6 +112,11 @@ def main():
             # Solicitar acciones para el gato
             print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
             acciones_gato = []
+            acciones_disponibles = acciones.copy()
+            if raton.alimentarse == 1:
+                acciones_disponibles.remove("alimentarse")
+            if raton.refugiarse == 1:
+                acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
                     f"'atacar', 'esconderse', 'alimentarse'\nAcción {i + 1}: ",
