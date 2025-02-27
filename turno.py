@@ -56,8 +56,8 @@ class Turno:
                 animal = choice(["gato", "raton"])
                 if animal == "gato":
                     if not self.raton.esquivar(self.gato):
-                        self.raton.atacar(self.gato, uniform(0.5, 1))
-                    self.gato.atacar(self.raton, uniform(0, 0.5))
+                        self.gato.atacar(self.raton, uniform(0, 0.5))
+                    self.raton.atacar(self.gato, uniform(0.5, 1))
                 else:
                     self.gato.atacar(self.raton, uniform(0.5, 1))
                     self.raton.atacar(self.gato, uniform(0, 0.5))

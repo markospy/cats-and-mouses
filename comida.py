@@ -18,9 +18,9 @@ class Comida:
 
         if self.tipo == "pescado" and isinstance(animal, Gato):
             animal.recuperarse(cantidad)
-            print(f"{animal.nombre} consume {self.tipo} y se cura.")
+            print(f"{animal.nombre} comió {self.tipo}.")
         elif self.tipo == "queso" and isinstance(animal, Raton):
             animal.recuperarse(cantidad)
-            print(f"{animal.nombre} consume {self.tipo} y se cura.")
+            print(f"{animal.nombre} comió {self.tipo}.")
         else:
             print(f"{animal.nombre} no puede comer esta comida.")

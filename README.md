@@ -64,9 +64,7 @@
 
 ### **Cómo Contribuir**
 ¡Invitamos a todos los desarrolladores interesados a contribuir al proyecto! Si tienes ideas para mejorar el juego, agregar nuevas características o corregir errores, ¡haz un **Pull Request**! Aquí hay algunas áreas en las que podrías contribuir:
-- **Nuevas Acciones**: Agrega nuevas acciones para los animales, como "defender" o "explorar".
-- **Nuevas Restricciones**: Dado que el refugio es compartido por ambos animales, se podría impedir que ambos animales lo usaran en el mismo turno. Para ellos había que definir una regla para establecer el orden en que los jugadores puedan definir sus acciones, ya que como esta actualemente implementado el juego el gato es siempre el primero en escojer su acción.
-- **Nuevos Animales**: Implementa nuevos animales con habilidades únicas.
+- **Nuevos Animales**: Implementa nuevos animales con habilidades únicas. EL raton tiene la habilidad unica de esquivar ataques.
 - **Mejoras en la Interfaz**: Mejora la interfaz de usuario para hacerla más amigable.
 - **Optimización**: Optimiza el código para mejorar el rendimiento.
 
