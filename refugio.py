@@ -9,7 +9,8 @@ class Refugio:
         self.calidad = calidad  # Por ejemplo, puede ser un valor entre 1 y 10
 
     def proporcionar_refugio(self, animal: Gato | Raton):
-        self.calidad -= 1
         """El animal se recupera en el refugio."""
+        self.calidad -= 1
+        animal.refugiarse = 1
         print(f"{animal.nombre} se refugia en un {self.tipo}.")
         animal.recuperarse(self.calidad)

@@ -8,6 +8,8 @@ class Animal:
         self.fuerza = fuerza
         self.defensa = defensa
         self.vitalidad = vitalidad
+        self.alimentarse = 0
+        self.refugiarse = 0
 
     def atacar(self, otro_animal):
         """Realiza un ataque a otro animal."""
@@ -39,6 +41,8 @@ class Gato(Animal):
     def atacar(self, raton: "Raton", factor: float):
         """Realiza un ataque a otro animal."""
         self.vitalidad -= 5
+        if self.refugiarse > 0:
+            self.refugiarse -= 0.5
         danio = (self.fuerza + self.agilidad - raton.defensa) * factor
         if danio > 0:
             raton.vida -= danio
@@ -87,6 +91,8 @@ class Raton(Animal):
     def atacar(self, gato: Gato, factor: float):
         """Ataque evasivo para el ratón."""
         self.vitalidad -= 5
+        if self.refugiarse > 0:
+            self.refugiarse -= 0.5
         danio = (self.fuerza + self.inteligencia - gato.defensa) * factor
         if danio > 0:
             gato.vida -= danio

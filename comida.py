@@ -10,14 +10,11 @@ class Comida:
 
     def consumir(self, animal: Gato | Raton, cantidad=2):
         """Permite que el animal consuma la comida y se recupere."""
+        self.cantidad -= cantidad
         if self.cantidad < cantidad:
             cantidad = self.cantidad
             print("Solo quedaba ", cantidad, "de", self.tipo)
-        elif self.cantidad >= cantidad:
-            self.cantidad -= cantidad
-        elif self.cantidad <= 0:
-            print("No queda comida")
-            return
+        animal.alimentarse = 1
 
         if self.tipo == "pescado" and isinstance(animal, Gato):
             animal.recuperarse(self.cantidad)
