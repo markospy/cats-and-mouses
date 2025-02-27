@@ -52,14 +52,11 @@ class Turno:
                 f"Turno {i + 1}:\n (Gato) {self.gato.nombre} realiza '{accion_gato}'\n(Raton) {self.raton.nombre} realiza '{accion_raton}'"
             )
 
-            if accion_gato == "atacar" and accion_raton == "esquivar":
-                if not self.raton.esquivar(self.gato):
-                    self.gato.atacar(self.raton)
-
             if accion_gato == "atacar" and accion_raton == "atacar":
                 animal = choice(["gato", "raton"])
                 if animal == "gato":
-                    self.raton.atacar(self.gato, uniform(0.5, 1))
+                    if not self.raton.esquivar(self.gato):
+                        self.raton.atacar(self.gato, uniform(0.5, 1))
                     self.gato.atacar(self.raton, uniform(0, 0.5))
                 else:
                     self.gato.atacar(self.raton, uniform(0.5, 1))
@@ -78,11 +75,11 @@ class Turno:
                 self.comida_gato.consumir(self.gato)
 
             if self.raton.vida <= 0:
-                print(f"¡El raton {self.raton.nombre} ha muerto! ¡El gato {self.pila_ratongato.nombre} gana!")
+                print(f"🪦 ¡El raton {self.raton.nombre} ha muerto! ¡El gato {self.pila_ratongato.nombre} gana!")
                 break
 
             if self.gato.vida <= 0:
-                print(f"¡El gato {self.gato.nombre} ha muerto! ¡El ratón {self.raton.nombre} gana!")
+                print(f"🪦 ¡El gato {self.gato.nombre} ha muerto! ¡El ratón {self.raton.nombre} gana!")
                 break
 
         if self.raton.vida > 0 and self.gato.vida > 0:

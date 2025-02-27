@@ -13,14 +13,14 @@ class Animal:
         danio = self.fuerza - otro_animal.defensa
         if danio > 0:
             otro_animal.vida -= danio
-            print(f"{self.nombre} ataca a {otro_animal.nombre} causando {danio} puntos de daño.")
+            print(f"🩸 {self.nombre} ataca a {otro_animal.nombre} causando {danio} puntos de daño.")
         else:
-            print(f"{self.nombre} intenta atacar a {otro_animal.nombre}, pero no hace daño.")
+            print(f"⚔️ {self.nombre} intenta atacar a {otro_animal.nombre}, pero no hace daño.")
 
     def defender(self, factor):
         """Defenderse de un ataque, reduce daño."""
         self.defensa += factor * 0.05
-        print(f"{self.nombre} se defiende, aumentando su defensa.")
+        print(f"🛡️ {self.nombre} se defiende, aumentando su defensa.")
 
     def muerto(self):
         """Verifica si el animal está muerto."""
@@ -58,10 +58,10 @@ class Gato(Animal):
                 self.agilidad += 5 * factor
             if self.fuerza < 100:
                 self.fuerza += 5 * factor
-            print(f"{self.nombre} ataca a {raton.nombre} causando {danio} puntos de daño.")
+            print(f"🩸 {self.nombre} ataca a {raton.nombre} causando {danio} puntos de daño.")
             raton.defender(danio)
         else:
-            print(f"{self.nombre} intenta atacar a {raton.nombre}, pero no hace daño.")
+            print(f"⚔️ {self.nombre} intenta atacar a {raton.nombre}, pero no hace daño.")
             self.agilidad -= 1
 
     def recuperarse(self, factor):
@@ -73,7 +73,7 @@ class Gato(Animal):
         if self.defensa < 100:
             self.defensa += factor * 3
         if self.agilidad > 10:
-            self.agilidad -= factor * 2
+            self.agilidad -= factor * 1
 
 
 class Raton(Animal):
@@ -98,21 +98,21 @@ class Raton(Animal):
                 gato.vida -= 5 * factor
             if self.fuerza < 100:
                 self.fuerza += 5 * factor
-            print(f"{self.nombre} (Raton) ataca a {gato.nombre} causando {danio} puntos de daño.")
+            print(f"🩸 {self.nombre} (Raton) ataca a {gato.nombre} causando {danio} puntos de daño.")
             gato.defender(danio)
         else:
-            print(f"{self.nombre} (Raton) intenta atacar a {gato.nombre}, pero no hace daño.")
+            print(f"⚔️ {self.nombre} (Raton) intenta atacar a {gato.nombre}, pero no hace daño.")
 
     def esquivar(self, gato: Gato):
         """El ratón puede intentar esquivar un ataque de un gato."""
         esquivar_probabilidad = self.inteligencia * random()  # A mayor inteligencia, mayor posibilidad de esquivar
         if esquivar_probabilidad > gato.agilidad / 100:
-            print(f"{self.nombre} (Raton) esquiva el ataque de {gato.nombre}")
+            print(f"🪖 {self.nombre} (Raton) esquiva el ataque de {gato.nombre}")
             if self.inteligencia < 100:
                 self.inteligencia += 1
             return True
         print(
-            f"{self.nombre} (Raton) intenta esquivar con una probabilidad de {esquivar_probabilidad * 100}%. pero falla"
+            f"🩹 {self.nombre} (Raton) intenta esquivar con una probabilidad de {esquivar_probabilidad * 100}%. pero falla"
         )
         return False
 

@@ -49,14 +49,14 @@ def main():
     while gato.vida > 0 and raton.vida > 0:
         print(f"\nTurno {turno._turno + 1}\n")
         print(
-            f"\tGato {gato.nombre}:\n\t\tVida: {gato.vida}\n\t\tFuerza: {gato.fuerza}\n\t\tDefensa: {gato.defensa}\n\t\tAgilidad: {gato.agilidad}\n"
+            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🐟Comida: {comida_gato.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
         )
         print(
-            f"\tRaton {raton.nombre}:\n\t\tVida: {raton.vida}\n\t\tFuerza: {raton.fuerza}\n\t\tDefensa: {raton.defensa}\n\t\tInteligencia: {raton.inteligencia}"
+            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🧀Comida: {comida_raton.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
         )
 
         # Solicitar acciones para el gato
-        print(f"\nAcciones para {gato.nombre} (Gato):")
+        print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
         acciones_gato = []
         for i in range(CANT_ACCIONES):
             accion = prompt(
@@ -68,7 +68,7 @@ def main():
             acciones_gato.append(accion)
 
         # Solicitar acciones para el ratón
-        print(f"\nAcciones para {raton.nombre} (Ratón):")
+        print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
         acciones_raton = []
         for i in range(CANT_ACCIONES):
             accion = prompt(
@@ -84,7 +84,7 @@ def main():
 
         # Resolver el turno
         turno.resolver_turno()
-        time.sleep(20)
+        time.sleep(10)
 
 
 if __name__ == "__main__":
