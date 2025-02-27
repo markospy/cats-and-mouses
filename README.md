@@ -12,10 +12,11 @@
 2. **Acciones Disponibles**:
    - **Atacar**: El gato o el ratón intentan atacar al otro. El daño depende de la fuerza del atacante y la defensa del defenso, así de la inteligencia en el raton y la agilidad en el gato.
    - **Esconderse**: El animal se refugia en un refugio, lo que le permite recuperar vida y otras estadísticas. La calidad del refugio disminuye con cada uso.
-   - **Alimentarse**: El animal consume comida para recuperar vida y otras estadísticas. La cantidad de comida disminuye con cada uso.
-   - **Recuperarse**: El animal se recupera cuando se esconde o alimenta, aumentando su vida, fuerza, defensa y vitalidad y disminuye otras, la inteligencia en el raton y la agilidad en el gato. Así que no abuses😌.
+   - **Alimentarse**: El animal consume comida para recuperar vida y otras estadísticas. La cantidad de comida disminuye con cada uso. Así que no abuses😌.
+   - **Recuperarse**: El animal se recupera cuando se esconde o alimenta, aumentando su vida, fuerza, defensa y vitalidad. Pero si ambos animales escojen entrar al refugio en el mismo turno, solo uno de ellos lo lograra (selección aleatoria).Así que ten cuidado con lo que elijes😌.
    - El gato y el rato después de alimentarse tiene que realizar 2 ataques para recuperar el derecho de volver a comer.
    - El gato y el rato después de refugiarse tiene que realizar 2 ataques para recuperar el derecho de volver a refugiarse.
+   - El esconderse ofrece el doble de recuperacion que la alimentarse y disminuye la inteligencia ni la agilidad.
 
 3. **Condiciones de Victoria**:
    - El gato gana si reduce la vida del ratón a 0.
