@@ -62,14 +62,15 @@ class Turno:
                     self.gato.atacar(self.raton, uniform(0.5, 1))
                     self.raton.atacar(self.gato, uniform(0, 0.5))
 
-            elif accion_raton == "esconderser":
-                self.refugio.proporcionar_refugio(self.raton)
+            elif accion_raton == "esconderser" and accion_gato == "esconderser":
+                animal = choice(["gato", "raton"])
+                if animal == "gato":
+                    self.refugio.proporcionar_refugio(self.gato)
+                else:
+                    self.refugio.proporcionar_refugio(self.raton)
 
             elif accion_raton == "alimentarse":
                 self.comida_raton.consumir(self.raton)
-
-            elif accion_gato == "esconderser":
-                self.refugio.proporcionar_refugio(self.gato)
 
             elif accion_gato == "alimentarse":
                 self.comida_gato.consumir(self.gato)
