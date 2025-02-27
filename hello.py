@@ -49,10 +49,10 @@ def main():
     while gato.vida > 0 and raton.vida > 0:
         print(f"\nTurno {turno._turno + 1}\n")
         print(
-            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🔋Vitalidad: {gato.vitalidad}\n\t\t🐟Comida: {comida_gato.cantidad} - Puede?: {gato.alimentarse<1}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {gato.refugiarse<1}"
+            f"\t🐱 Gato {gato.nombre}:\n\t\t❤️Vida: {gato.vida}\n\t\t💪Fuerza: {gato.fuerza}\n\t\t🛡️Defensa: {gato.defensa}\n\t\t💨Agilidad: {gato.agilidad}\n\t\t🔋Vitalidad: {gato.vitalidad}\n\t\t🐟Comida: {comida_gato.cantidad} - Puede?: {gato.alimentarse==1}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {gato.refugiarse==1}"
         )
         print(
-            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad} - Puede?: {raton.alimentarse<1}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {raton.refugiarse<1}"
+            f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad} - Puede?: {raton.alimentarse==1}\n\t\t🕳️Refugio: {refugio.calidad} - Puede?: {raton.refugiarse==1}"
         )
 
         animal = choice(["gato", "raton"])
