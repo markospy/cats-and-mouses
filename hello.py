@@ -1,5 +1,5 @@
 import time
-from random import randint
+from random import choice, randint
 
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
@@ -55,29 +55,56 @@ def main():
             f"\t🐭 Raton {raton.nombre}:\n\t\t❤️Vida: {raton.vida}\n\t\t💪Fuerza: {raton.fuerza}\n\t\t🛡️Defensa: {raton.defensa}\n\t\t👁️‍🗨️Inteligencia: {raton.inteligencia}\n\t\t🔋Vitalidad: {raton.vitalidad}\n\t\t🧀Comida: {comida_raton.cantidad}\n\t\t🕳️Refugio: {refugio.calidad}"
         )
 
-        # Solicitar acciones para el gato
-        print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
-        acciones_gato = []
-        for i in range(CANT_ACCIONES):
-            accion = prompt(
-                f"'atacar', 'esconderser', 'alimentarse'\nAcción {i + 1}: ",
-                completer=acciones_disponibles,
-                validator=OptionValidator(),
-                validate_while_typing=False,
-            )
-            acciones_gato.append(accion)
+        animal = choice(["gato", "raton"])
+        if animal == "gato":
+            # Solicitar acciones para el gato
+            print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
+            acciones_gato = []
+            for i in range(CANT_ACCIONES):
+                accion = prompt(
+                    f"'atacar', 'esconderser', 'alimentarse'\nAcción {i + 1}: ",
+                    completer=acciones_disponibles,
+                    validator=OptionValidator(),
+                    validate_while_typing=False,
+                )
+                acciones_gato.append(accion)
 
-        # Solicitar acciones para el ratón
-        print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
-        acciones_raton = []
-        for i in range(CANT_ACCIONES):
-            accion = prompt(
-                f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
-                completer=acciones_disponibles,
-                validator=OptionValidator(),
-                validate_while_typing=False,
-            )
-            acciones_raton.append(accion)
+            # Solicitar acciones para el ratón
+            print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
+            acciones_raton = []
+            for i in range(CANT_ACCIONES):
+                accion = prompt(
+                    f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
+                    completer=acciones_disponibles,
+                    validator=OptionValidator(),
+                    validate_while_typing=False,
+                )
+                acciones_raton.append(accion)
+
+        else:
+            # Solicitar acciones para el ratón
+            print(f"\nAcciones para {raton.nombre} (Ratón) 🐭:")
+            acciones_raton = []
+            for i in range(CANT_ACCIONES):
+                accion = prompt(
+                    f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
+                    completer=acciones_disponibles,
+                    validator=OptionValidator(),
+                    validate_while_typing=False,
+                )
+                acciones_raton.append(accion)
+
+            # Solicitar acciones para el gato
+            print(f"\nAcciones para {gato.nombre} (Gato) 🐱:")
+            acciones_gato = []
+            for i in range(CANT_ACCIONES):
+                accion = prompt(
+                    f"'atacar', 'esconderser', 'alimentarse'\nAcción {i + 1}: ",
+                    completer=acciones_disponibles,
+                    validator=OptionValidator(),
+                    validate_while_typing=False,
+                )
+                acciones_gato.append(accion)
 
         # Compilar las acciones en el turno
         turno.compilar_acciones(acciones_gato, acciones_raton)
