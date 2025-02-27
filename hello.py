@@ -67,7 +67,7 @@ def main():
                 acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
-                    f"'atacar', 'esconderse', 'alimentarse'\nAcción {i + 1}: ",
+                    f"{acciones_disponibles} \nAcción {i + 1}: ",
                     completer=WordCompleter(acciones_disponibles),
                     validator=OptionValidator(),
                     validate_while_typing=False,
@@ -84,7 +84,7 @@ def main():
                 acciones_disponibles.remove("esconderse")
             for i in range(CANT_ACCIONES):
                 accion = prompt(
-                    f"'atacar', 'alimentarse', 'esconderse'\nAcción {i + 1}: ",
+                    f"{acciones_disponibles} \nAcción {i + 1}: ",
                     completer=WordCompleter(acciones_disponibles),
                     validator=OptionValidator(),
                     validate_while_typing=False,
