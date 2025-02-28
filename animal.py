@@ -43,6 +43,8 @@ class Gato(Animal):
         self.vitalidad -= 5
         if self.refugiarse > 0:
             self.refugiarse -= 0.5
+        if self.alimentarse > 0:
+            self.alimentarse -= 0.5
         danio = (self.fuerza + self.agilidad - raton.defensa) * factor
         if danio > 0:
             raton.vida -= danio
@@ -93,6 +95,8 @@ class Raton(Animal):
         self.vitalidad -= 5
         if self.refugiarse > 0:
             self.refugiarse -= 0.5
+        if self.alimentarse > 0:
+            self.alimentarse -= 0.5
         danio = (self.fuerza + self.inteligencia - gato.defensa) * factor
         if danio > 0:
             gato.vida -= danio
